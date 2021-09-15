@@ -1,8 +1,6 @@
 ```{r}
 d = rio::import('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6015533/bin/NIHMS957592-supplement-1.xlsx')
 
-d
-
 library(tidyverse)
 yes_table <- filter(d, ASD == "Y") %>%
   select(Effect)
