@@ -1,0 +1,20 @@
+```{r}
+d = rio::import('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6015533/bin/NIHMS957592-supplement-1.xlsx')
+
+d
+
+library(tidyverse)
+yes_table <- filter(d, ASD == "Y") %>%
+  select(Effect)
+
+no_table <- filter(d, ASD == "N") %>%
+  select(Effect)
+
+yes_table
+no_table
+
+as.factor(yes_table)
+as.factor(no_table)
+
+```
+Answer : ASD patients have 6 effect group. Non-ASD patients have 3 effect group.
